@@ -1,0 +1,44 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/mjm-logo.svg";
+---
+
+<header class="wrapper">
+  <Image src={logo} alt="Homepage link" />
+
+  <nav class="primary-nav">
+    <ul role="list" class="primary-nav__inner">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <a class="flex-flow align-center" href="/src/assets/mjm-logo.svg" download>
+    Resume
+  </a>
+</header>
+
+<style>
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-block: 1.5rem;
+    padding-inline: 0.5rem;
+    border-bottom: 1px solid;
+  }
+
+  .primary-nav__inner {
+    display: flex;
+    gap: 2.25rem;
+  }
+
+  a[download]::after {
+    content: url(/src/assets/icons/ui/icon-download.svg);
+    max-width: 20px;
+    max-height: 20px;
+  }
+</style>

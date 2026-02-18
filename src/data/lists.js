@@ -64,7 +64,7 @@ export const socialLinks = [
   {
     name: "Email",
     icon: email,
-    link: "mattjm1007@gmail.com",
+    link: "matthewmiguel.dev@gmail.com",
   },
   {
     name: "LinkedIn",

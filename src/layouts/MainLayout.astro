@@ -1,5 +1,6 @@
 ---
 import "../styles/main.css";
+import MainHeader from "../components/MainHeader.astro";
 ---
 
 <!doctype html>
@@ -14,10 +15,14 @@ import "../styles/main.css";
   </head>
 
   <body>
-    <header></header>
-    <slot />
+    <MainHeader />
+
+    <main>
+      <slot />
+    </main>
+
     <footer>
-      <p>© Matthew Miguel {new Date().getFullYear()}</p>
+      <p class="wrapper">© Matthew Miguel {new Date().getFullYear()}</p>
     </footer>
   </body>
 </html>

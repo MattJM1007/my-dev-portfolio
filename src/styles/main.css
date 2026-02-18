@@ -184,6 +184,14 @@ body {
   font-family: var(--ff-base);
   font-size: var(--fs-base);
   font-weight: var(--fw-regular);
+  background-color: #323232;
+  color: #fafaf9;
+  padding-inline: 1rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 /* ******** COMPOSITION / LAYOUT ******** */
