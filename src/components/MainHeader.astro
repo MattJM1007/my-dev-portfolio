@@ -17,6 +17,40 @@ import logo from "../assets/mjm-logo.svg";
 
   <a class="flex-flow align-center" href="/src/assets/mjm-logo.svg" download>
     Resume
+    <svg
+      width="20"
+      xmlns="http://www.w3.org/2000/svg"
+      height="20"
+      id="screenshot-da436653-6edb-8074-8007-79209babb61e"
+      viewBox="0 0 20 20"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      fill="var(--clr-neutral-100)"
+      version="1.1"
+      ><g id="shape-da436653-6edb-8074-8007-79209babb61e" rx="0" ry="0"
+        ><g
+          id="shape-da436653-6edb-8074-8007-79209babb61f"
+          style="display: none;"
+          ><g class="fills" id="fills-da436653-6edb-8074-8007-79209babb61f"
+            ><rect
+              width="20"
+              height="20"
+              x="0"
+              transform="matrix(1.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000)"
+              style="fill: none;"
+              ry="0"
+              fill="none"
+              rx="0"
+              y="0"></rect></g
+          ></g
+        ><g id="shape-da436653-6edb-8074-8007-79209babb620"
+          ><g class="fills" id="fills-da436653-6edb-8074-8007-79209babb620"
+            ><path
+              d="M4.169921875,16.6640625L15.833984375,16.6640625L15.833984375,15L4.169921875,15M15.833984375,7.5L12.501953125,7.5L12.501953125,2.5L7.501953125,2.5L7.501953125,7.5L4.169921875,7.5L10,13.3359375L15.833984375,7.5Z"
+            ></path></g
+          ></g
+        ></g
+      ></svg
+    >
   </a>
 </header>
 
@@ -24,21 +58,52 @@ import logo from "../assets/mjm-logo.svg";
   header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     padding-block: 1.5rem;
-    padding-inline: 0.5rem;
-    border-bottom: 1px solid;
+    padding-inline: 1.5rem;
+    position: relative;
+    color: var(--clr-neutral-100);
+
+    @media (width > 40em) {
+      justify-content: space-between;
+    }
+  }
+
+  header:after {
+    content: "";
+    position: absolute;
+    background: hsl(from var(--clr-primary-900) h s l / 0.9);
+    inset: 1.75rem 0;
+    z-index: -1;
+    border-radius: 100vw;
+
+    /* height: 1px; */
   }
 
   .primary-nav__inner {
     display: flex;
-    gap: 2.25rem;
+    gap: 1.75rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @media (width > 40em) {
+      gap: 2.25rem;
+    }
   }
 
-  a[download]::after {
-    content: url(/src/assets/icons/ui/icon-download.svg);
-    max-width: 20px;
-    max-height: 20px;
+  a {
+    position: relative;
+    padding: 1rem;
+  }
+
+  a:hover {
+    background: orange;
+    color: black;
+
+    & svg {
+      fill: black;
+    }
   }
 </style>

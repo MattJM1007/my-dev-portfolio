@@ -16,73 +16,34 @@
 
 :root {
   /* Colors - Primary */
-  --clr-primary-100: ;
-  --clr-primary-200: ;
-  --clr-primary-300: ;
-  --clr-primary-400: ;
-  --clr-primary-500: ;
-  --clr-primary-600: ;
-  --clr-primary-700: ;
-  --clr-primary-800: ;
-  --clr-primary-900: ;
+  --clr-primary-300: hsl(214, 65%, 54%);
+  --clr-primary-400: hsl(214, 52%, 25%);
+  --clr-primary-900: hsl(223, 68%, 6%);
 
   /* Colors - Accent */
-  --clr-accent-1: ;
-  --clr-accent-2: ;
+  --clr-accent-1: hsl(25, 95%, 53%);
 
   /* Colors - Neutral */
-  --clr-neutral-100: ;
-  --clr-neutral-200: ;
-  --clr-neutral-300: ;
-  --clr-neutral-400: ;
-  --clr-neutral-500: ;
-  --clr-neutral-600: ;
-  --clr-neutral-700: ;
-  --clr-neutral-800: ;
-  --clr-neutral-900: ;
+  --clr-neutral-100: hsl(60, 9%, 98%);
+
+  /* Colors - Neutral */
+  --clr-gradient: hsl(214, 65%, 54%), hsl(214, 52%, 25%), hsl(223, 68%, 6%);
 
   /* Font Families */
   --ff-base: "Figtree", system-ui, sans-serif;
-  --ff-accent: ;
 
   /* Font Sizes */
-  --fs-xs: calc(12 / 16 * 1rem);
-  --fs-sm: calc(14 / 16 * 1rem);
-  --fs-base: calc(16 / 16 * 1rem);
-  --fs-md: calc(18 / 16 * 1rem);
-  --fs-lg: calc(20 / 16 * 1rem);
-  --fs-xl: calc(24 / 16 * 1rem);
-  --fs-2xl: calc(32 / 16 * 1rem);
-  --fs-3xl: calc(48 / 16 * 1rem);
-  --fs-4xl: calc(64 / 16 * 1rem);
+  --fs-sm: 0.875rem; /* 14px */
+  --fs-base: 1.125rem; /* 18px */
+  --fs-md: 1.25rem; /* 20px */
+  --fs-lg: 1.75rem; /* 28px */
+  --fs-xl: 2rem; /* 32px */
+  --fs-2xl: 3rem; /* 48px */
+  --fs-3xl: 4rem; /* 64px */
 
   /* Font Weights */
-  --fw-light: ;
-  --fw-regular: ;
-  --fw-medium: ;
-  --fw-bold: ;
-  --fw-black: ;
-
-  /* Margin / Padding Spaces */
-  --space-3xs: ;
-  --space-2xs: ;
-  --space-xs: ;
-  --space-sm: ;
-  --space-md: ;
-  --space-lg: ;
-  --space-xl: ;
-  --space-2xl: ;
-  --space-3xl: ;
-
-  /* Space One-Step-Up pairs */
-  --space-3xs-2xs: ;
-  --space-2xs-xs: ;
-  --space-xs-sm: ;
-  --space-sm-md: ;
-  --space-md-lg: ;
-  --space-lg-xl: ;
-  --space-xl-2xl: ;
-  --space-2xl-3xl: ;
+  --fw-regular: 400;
+  --fw-bold: 700;
 }
 
 /* ******** RESET ******** */
@@ -184,8 +145,8 @@ body {
   font-family: var(--ff-base);
   font-size: var(--fs-base);
   font-weight: var(--fw-regular);
-  background-color: #323232;
-  color: #fafaf9;
+  background-color: var(--clr-neutral-100);
+  color: var(--clr-primary-900);
   padding-inline: 1rem;
 }
 
