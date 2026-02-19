@@ -33,13 +33,23 @@
   --ff-base: "Figtree", system-ui, sans-serif;
 
   /* Font Sizes */
-  --fs-sm: 0.875rem; /* 14px */
-  --fs-base: 1.125rem; /* 18px */
-  --fs-md: 1.25rem; /* 20px */
-  --fs-lg: 1.75rem; /* 28px */
-  --fs-xl: 2rem; /* 32px */
-  --fs-2xl: 3rem; /* 48px */
-  --fs-3xl: 4rem; /* 64px */
+
+  /* Step -1: 12.8px → 13.5034px */
+  --fs-step--1: clamp(0.8rem, 0.7853rem + 0.0651vw, 0.844rem);
+  /* Step 0: 16px → 18px */
+  --fs-step-0: clamp(1rem, 0.9583rem + 0.1852vw, 1.125rem);
+  /* Step 1: 20px → 23.994px */
+  --fs-step-1: clamp(1.25rem, 1.1668rem + 0.3698vw, 1.4996rem);
+  /* Step 2: 25px → 31.984px */
+  --fs-step-2: clamp(1.5625rem, 1.417rem + 0.6467vw, 1.999rem);
+  /* Step 3: 31.25px → 42.6347px */
+  --fs-step-3: clamp(1.9531rem, 1.7159rem + 1.0541vw, 2.6647rem);
+  /* Step 4: 39.0625px → 56.832px */
+  --fs-step-4: clamp(2.4414rem, 2.0712rem + 1.6453vw, 3.552rem);
+  /* Step 5: 48.8281px → 75.7571px */
+  --fs-step-5: clamp(3.0518rem, 2.4907rem + 2.4934vw, 4.7348rem);
+
+  /* @link https://utopia.fyi/type/calculator?c=360,16,1.25,1440,18,1.333,5,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 
   /* Font Weights */
   --fw-regular: 400;
@@ -138,15 +148,20 @@ canvas,
 svg {
   display: block;
   max-inline-size: 100%;
+  block-size: auto;
 }
 
 /* ******** GENERAL STYLES ******** */
 body {
   font-family: var(--ff-base);
-  font-size: var(--fs-base);
+  font-size: var(--fs-step-0);
   font-weight: var(--fw-regular);
   background-color: var(--clr-neutral-100);
   color: var(--clr-primary-900);
+}
+
+section {
+  padding-block: clamp(4rem, 3.125rem + 2.134vw, 7.5rem);
 }
 
 a {
@@ -158,6 +173,7 @@ a {
 .wrapper {
   max-inline-size: 70em;
   margin-inline: auto;
+  padding-inline: 2rem;
 }
 
 .flow > * + * {
@@ -183,19 +199,8 @@ a {
   grid-template-columns: var(--column-template);
 }
 
-.grid-auto {
-  --min-col-size: 200px;
-  --item-placement: auto-fit;
-  display: grid;
-  gap: var(--gap, 1rem);
-  grid-template-columns: repeat(
-    var(--item-placement),
-    minmax(min(var(--min-col-size), 100%), 1fr)
-  );
-}
-
 .gap-md {
-  --gap: 2rem;
+  --gap: 1.5rem;
 }
 
 .align-center {
@@ -204,6 +209,10 @@ a {
 
 .justify-center {
   justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
 }
 
 .place-center {
@@ -235,31 +244,31 @@ a {
   background-image: radial-gradient(var(--clr-gradient));
 }
 
-.text-sm {
-  font-size: var(--fs-sm);
+.fs-step--1 {
+  font-size: var(--fs-step--1);
 }
 
-.text-md {
-  font-size: var(--fs-md);
+.fs-step-1 {
+  font-size: var(--fs-step-1);
 }
 
-.text-lg {
-  font-size: var(--fs-lg);
+.fs-step-2 {
+  font-size: var(--fs-step-2);
 }
 
-.text-xl {
-  font-size: var(--fs-xl);
+.fs-step-3 {
+  font-size: var(--fs-step-3);
 }
 
-.text-2xl {
-  font-size: var(--fs-2xl);
+.fs-step-4 {
+  font-size: var(--fs-step-4);
 }
 
-.text-3xl {
-  font-size: var(--fs-3xl);
+.fs-step-5 {
+  font-size: var(--fs-step-5);
 }
 
-.text-bold {
+.fw-bold {
   font-weight: var(--fw-bold);
 }
 
@@ -272,7 +281,7 @@ a {
 }
 
 .padding-block-2xl {
-  padding-block: clamp(5rem, -13.099rem + 48.263vw, 25rem);
+  padding-block: clamp(5rem, -13.099rem + 48.263vw, 20rem);
 }
 
 /* ******** COMPONENTS ******** */
@@ -280,7 +289,9 @@ a {
   max-width: 4rem; /* 70px */
 }
 
-#hero {
+/* ******** BLOCK STYLE ******** */
+.hero {
+  --flow-space: 1.5rem;
   position: relative;
   overflow: hidden;
   isolation: isolate;
@@ -295,6 +306,21 @@ a {
   object-fit: cover;
   opacity: 0.5;
 }
-/* ******** BLOCK STYLE ******** */
+
+.about .profile {
+  @media (width > 48em) {
+    --column-template: 1fr 1fr;
+  }
+}
+
+.profile-pic {
+  justify-self: center;
+  filter: drop-shadow(0 0 4px hsl(0 0% 0% / 0.5));
+
+  @media (width > 48em) {
+    order: 1;
+    justify-self: end;
+  }
+}
 
 /* ******** EXCEPTIONS ******** */

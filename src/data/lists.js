@@ -17,7 +17,7 @@ export const certificates = {
 };
 
 export const education = {
-  header: "Certificates",
+  header: "Education",
   icon: college,
   listItems: [
     "MS Occupational Health and Safety Engineering - NJIT",

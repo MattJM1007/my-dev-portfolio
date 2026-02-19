@@ -1,0 +1,14 @@
+---
+const { icon, title, items } = Astro.props;
+---
+
+<div>
+  <h3>{title}</h3>
+  <ul role="list">
+    {
+      items.map((item) => {
+        return <li>{item}</li>;
+      })
+    }
+  </ul>
+</div>
