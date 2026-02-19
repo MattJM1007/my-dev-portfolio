@@ -147,7 +147,6 @@ body {
   font-weight: var(--fw-regular);
   background-color: var(--clr-neutral-100);
   color: var(--clr-primary-900);
-  padding-inline: 1rem;
 }
 
 a {
@@ -170,6 +169,10 @@ a {
   gap: var(--gap, 1rem);
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .grid-flow {
   --column-count: 1;
   --column-size: 1fr;
@@ -189,6 +192,10 @@ a {
     var(--item-placement),
     minmax(min(var(--min-col-size), 100%), 1fr)
   );
+}
+
+.gap-md {
+  --gap: 2rem;
 }
 
 .align-center {
@@ -219,8 +226,75 @@ a {
   display: none;
 }
 
-/* ******** COMPONENTS ******** */
+.bg-dark {
+  background: var(--clr-primary-900);
+  color: var(--clr-neutral-100);
+}
 
+.bg-gradient {
+  background-image: radial-gradient(var(--clr-gradient));
+}
+
+.text-sm {
+  font-size: var(--fs-sm);
+}
+
+.text-md {
+  font-size: var(--fs-md);
+}
+
+.text-lg {
+  font-size: var(--fs-lg);
+}
+
+.text-xl {
+  font-size: var(--fs-xl);
+}
+
+.text-2xl {
+  font-size: var(--fs-2xl);
+}
+
+.text-3xl {
+  font-size: var(--fs-3xl);
+}
+
+.text-bold {
+  font-weight: var(--fw-bold);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-clr-light {
+  color: var(--clr-neutral-100);
+}
+
+.padding-block-2xl {
+  padding-block: clamp(5rem, -13.099rem + 48.263vw, 25rem);
+}
+
+/* ******** COMPONENTS ******** */
+.icon-lg {
+  max-width: 4rem; /* 70px */
+}
+
+#hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero__bg {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+}
 /* ******** BLOCK STYLE ******** */
 
 /* ******** EXCEPTIONS ******** */

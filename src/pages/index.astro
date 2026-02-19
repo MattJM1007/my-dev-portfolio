@@ -1,9 +1,34 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import { techStack } from "../data/techStack";
+import { Image } from "astro:assets";
+import heroBG from "../assets/images/bg-starry-night.webp";
 ---
 
 <MainLayout>
-  <section id="hero" class="wrapper">
-    <h1>Matthew Miguel</h1>
+  <section
+    id="hero"
+    class="text-center bg-gradient text-clr-light padding-block-2xl"
+  >
+    <div class="wrapper flow">
+      <Image class="hero__bg" src={heroBG} alt="" />
+      <h1 class="text-3xl text-bold">Matthew Miguel</h1>
+      <p class="text-xl">Frontend Web Developer</p>
+      <ul
+        role="list"
+        aria-label="My Tech Stack"
+        class="flex-flow gap-md align-center justify-center flex-wrap"
+      >
+        {
+          techStack.map((item) => {
+            return (
+              <li>
+                <Image class="icon-lg" src={item.icon} alt={item.name} />
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
   </section>
 </MainLayout>
