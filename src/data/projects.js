@@ -18,96 +18,54 @@ import weatherDesktop from "../assets/images/projects/weather-desktop.webp";
 import weatherMobile from "../assets/images/projects/weather-mobile.webp";
 import weatherTablet from "../assets/images/projects/weather-tablet.webp";
 
-export const projects = {
-  weather: {
+export const projects = [
+  {
     featured: true,
-    screenshots: {
-      desktop: weatherDesktop,
-      tablet: weatherTablet,
-      mobile: weatherMobile,
-    },
+    screenshots: [weatherDesktop, weatherTablet, weatherMobile],
     title: "Weather Now",
-    tags: [
-      "React",
-      "React Hooks",
-      "API Integration",
-      "CSS Grid",
-      "Keyboard Accessibility",
-    ],
+    tags: ["React", "React Hooks", "API Integration", "CSS Grid", "Keyboard Accessibility"],
     description:
       "Weather Now is a forecast app that lets users check current, hourly, and daily weather conditions for any location in the world. Built with React, it features geolocation on load, a searchable location dropdown with full keyboard accessibility, and unit toggling between imperial and metric. The responsive layout uses CSS Grid with named template areas to adapt across screen sizes. Data is sourced from the Open-Meteo API, Big Data Cloud API, and the native Geolocation API.",
     demoLink: "https://mattjm1007.github.io/weather-app/",
     codeLink: "https://github.com/MattJM1007/weather-app",
   },
 
-  scoot: {
+  {
     featured: true,
-    screenshots: {
-      desktop: scootDesktop,
-      tablet: scootTablet,
-      mobile: scootMobile,
-    },
+    screenshots: [scootDesktop, scootTablet, scootMobile],
     title: "Scoot Multi-Page Site",
-    tags: [
-      "Semantic HTML",
-      "Mobile Navigation",
-      "Accessibility",
-      "CSS Grid",
-      "Flexbox",
-    ],
+    tags: ["Semantic HTML", "Mobile Navigation", "Accessibility", "CSS Grid", "Flexbox"],
     description:
       "Scoot is a multi-page marketing website for a fictional scooter-sharing service. The site features four pages with complex responsive layouts using CSS Grid and Flexbox, reusable decorative patterns built with pseudo-elements and CSS counters, and a mobile navigation menu with proper ARIA state management. Semantic HTML and consistent component patterns are maintained across all pages.",
     demoLink: "https://mattjm1007.github.io/fem-scoot-challenge/",
     codeLink: "https://github.com/MattJM1007/fem-scoot-challenge",
   },
 
-  contact: {
+  {
     featured: true,
-    screenshots: {
-      desktop: contactDesktop,
-      tablet: contactTablet,
-      mobile: contactMobile,
-    },
+    screenshots: [contactDesktop, contactTablet, contactMobile],
     title: "React Contact Form",
-    tags: [
-      "React",
-      "Constraint Validation API",
-      "Error Handling",
-      "Accessibility",
-    ],
+    tags: ["React", "Constraint Validation API", "Error Handling", "Accessibility"],
     description:
       "A contact form component built with React featuring custom validation using the native Constraint Validation API. Errors display on blur and clear as the user types, providing immediate feedback without being intrusive. The form uses semantic HTML with proper ARIA attributes including aria-live regions for screen reader announcements and aria-describedby to connect inputs to their error messages. A toast notification confirms successful submission.",
     demoLink: "https://mattjm1007.github.io/react-contact-form-component/",
     codeLink: "https://github.com/MattJM1007/react-contact-form-component",
   },
 
-  password: {
+  {
     featured: true,
-    screenshots: {
-      desktop: passwordDesktop,
-      tablet: passwordTablet,
-      mobile: passwordMobile,
-    },
+    screenshots: [passwordDesktop, passwordTablet, passwordMobile],
     title: "Password Generator",
-    tags: [
-      "Advanced CSS Selectors",
-      "Semantic HTML",
-      "Form Handling",
-      "JavaScript",
-    ],
+    tags: ["Advanced CSS Selectors", "Semantic HTML", "Form Handling", "JavaScript"],
     description:
       "A password generator that lets users customize length and character types to create secure passwords. The strength indicator uses minimal JavaScript to set a single class, with CSS :has() and sibling selectors handling all visual states from there. Form inputs are built with semantic HTML and custom-styled while maintaining full accessibility. Generated passwords can be copied to the clipboard with a single click.",
     demoLink: "https://mattjm1007.github.io/Password-Generator-App/",
     codeLink: "https://github.com/MattJM1007/Password-Generator-App",
   },
 
-  quiz: {
+  {
     featured: true,
-    screenshots: {
-      desktop: quizDesktop,
-      tablet: quizTablet,
-      mobile: quizMobile,
-    },
+    screenshots: [quizDesktop, quizTablet, quizMobile],
     title: "Front End Quiz App",
     tags: ["Theme Switcher", "JavaScript", "Data-Driven UI", "Aysnc/Await"],
     description:
@@ -116,13 +74,9 @@ export const projects = {
     codeLink: "https://github.com/MattJM1007/Frontend-Quiz-App",
   },
 
-  faq: {
+  {
     featured: true,
-    screenshots: {
-      desktop: faqDesktop,
-      tablet: faqTablet,
-      mobile: null,
-    },
+    screenshots: [faqDesktop, faqTablet],
     title: "FAQ Accordian - CSS Only",
     tags: ["Semantic HTML", "CSS Only", "CSS Animations", "Interpolate-size"],
     description:
@@ -130,7 +84,7 @@ export const projects = {
     demoLink: "https://mattjm1007.github.io/faq-accordian/",
     codeLink: "https://github.com/MattJM1007/faq-accordian",
   },
-};
+];
 
 export const community = {
   lyndhurst: {

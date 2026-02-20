@@ -1,0 +1,115 @@
+---
+const { featured, screenshots, title, tags, description, demoLink, codeLink } = Astro.props;
+import Image from "astro/components/Image.astro";
+---
+
+<div class="project flow">
+  <div class="screenshots">
+    {
+      screenshots.map((screenshot) => {
+        return <Image src={screenshot} alt="" />;
+      })
+    }
+  </div>
+
+  <div class="title-container flex-flow align-center flex-wrap">
+    <h3 class="fs-step-2">{title}</h3>
+    <div class="tags">
+      {
+        tags.map((tag) => {
+          return <span class="tag fs-step--1">{tag}</span>;
+        })
+      }
+    </div>
+  </div>
+
+  <p>{description}</p>
+
+  <div class="flex-flow">
+    <a href={demoLink} class="button">Demo</a>
+    <a href={codeLink} class="button">Code</a>
+  </div>
+
+  <div class="divider-lg"></div>
+</div>
+
+<style>
+  .project {
+    --flow-space: 1.5rem;
+    margin-block-start: 3rem;
+  }
+
+  .screenshots {
+    display: flex;
+    align-items: flex-end;
+    filter: drop-shadow(0 0 4px hsl(0 0% 0% / 0.5));
+    z-index: -1;
+  }
+
+  .screenshots > * {
+    object-fit: cover;
+    object-position: top;
+    flex-shrink: 1;
+    z-index: -1;
+  }
+
+  .screenshots :nth-child(1) {
+    max-height: 550px;
+    max-width: 70%;
+  }
+
+  .screenshots :nth-child(2) {
+    max-height: 500px;
+    transform: translateX(-20px);
+    max-width: 30%;
+  }
+
+  .screenshots :nth-child(3) {
+    max-height: 450px;
+    transform: translateX(-40px);
+    max-width: 20%;
+  }
+
+  .title-container {
+    margin-block-start: 3rem;
+    gap: 1.5rem;
+
+    @media (width > 55em) {
+      gap: 3rem;
+    }
+  }
+
+  .tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .tag {
+    color: var(--clr-neutral-100);
+    background: var(--clr-neutral-600);
+    font-weight: var(--fw-bold);
+    border-radius: 0.25rem;
+    padding-inline: 1em;
+    padding-block: 0.25em;
+  }
+
+  .button {
+    display: inline-block;
+    color: var(--fg, var(--clr-primary-400));
+    background: var(--bg, var(--clr-neutral-100));
+    font-weight: bold;
+    border: 3px solid var(--clr-primary-400);
+    border-radius: 0.5rem;
+    padding-inline: 2em;
+    padding-block: 0.5em;
+    cursor: pointer;
+    transform: background 500ms ease-in;
+  }
+
+  .button:is(:hover, :focus-visible) {
+    --fg: var(--clr-neutral-100);
+    --bg: var(--clr-primary-400);
+  }
+</style>

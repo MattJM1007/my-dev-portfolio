@@ -1,22 +1,21 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import CustomList from "../components/CustomList.astro";
+import Project from "../components/Project.astro";
 
 import { techStack } from "../data/techStack";
 import { certificates, education, skills } from "../data/lists";
+import { projects } from "../data/projects";
 
 import { Image } from "astro:assets";
-import heroBG from "../assets/images/bg-starry-night.webp";
+import heroBG from "../assets/images/bg-starry-night-1920.webp";
 import profilePic from "../assets/images/profile-pic.webp";
 ---
 
 <MainLayout>
-  <section
-    id="hero"
-    class="hero text-center bg-gradient text-clr-light padding-block-2xl"
-  >
+  <section id="hero" class="hero text-center bg-gradient text-clr-light padding-block-2xl">
     <div class="wrapper flow">
-      <Image class="hero__bg" src={heroBG} alt="" />
+      <Image class="hero__bg" src={heroBG} alt="" width={1920} height={1080} />
       <h1 class="fs-step-5 text-bold">Matthew Miguel</h1>
       <p class="fs-step-2">Frontend Web Developer</p>
       <ul
@@ -42,56 +41,43 @@ import profilePic from "../assets/images/profile-pic.webp";
     <div class="wrapper flow">
       <h2 class="visually-hidden">About Me</h2>
       <div class="profile grid-flow justify-center align-center">
-        <Image class="profile-pic" src={profilePic} alt="" />
+        <Image class="profile-pic" src={profilePic} alt="" width={500} height={400} />
 
         <div class="profile__content flow">
           <span class="fs-step-2 fw-bold">Hello, I'm Matthew</span>
           <p>
-            I am detailed-oriented and design minded web developer focusing on
-            transforming great designs into excellent user experiences through
-            well-written, maintainable code.
+            I am detailed-oriented and design minded web developer focusing on transforming great
+            designs into excellent user experiences through well-written, maintainable code.
           </p>
 
           <div class="divider-sm"></div>
 
           <p>
-            I spent the last couple of years learning web development through
-            various online courses from reputable developers. I have experience
-            building landing pages, multi-page websites, small components, and
-            web applications. I strive to create products that function
-            efficiently, and provide seamless user experiences.
+            I spent the last couple of years learning web development and have gained experience
+            building landing pages, multi-page websites, small components, and web applications.
           </p>
           <p>
-            With a background in engineering, I love the process of analytical
-            thinking and problem solving. However, I've always been drawn to
-            creative work like graphic design and video editing. Once I started
-            learning to code, I quickly fell in love with frontend development.
-            It's the perfect intersection of problem solving and creative work.
+            With a background in engineering, I love the process of analytical thinking and problem
+            solving. However, I've always been drawn to creative work like graphic design and video
+            editing. Once I started learning to code, I quickly fell in love with frontend
+            development. It's the perfect intersection of problem solving and creative work.
           </p>
           <p>
-            The process of building a beautifully functioning website or
-            application that brings value to a user's daily life is immensely
-            satisfying. I'm always looking for opportunities to learn new skills
-            and grow, so that I can build products people love to use.
+            I strive to create products that function efficiently, and provide seamless user
+            experiences. I'm always looking for opportunities to learn new skills and grow, so that
+            I can build products people love to use.
           </p>
         </div>
       </div>
 
-      <div
-        class="education flex-flow flex-wrap justify-between"
-        style="--flow-space: 3rem;"
-      >
+      <div class="education flex-flow flex-wrap justify-between" style="--flow-space: 3rem;">
         <CustomList
           title={certificates.header}
           items={certificates.listItems}
           listType="certificate"
         />
 
-        <CustomList
-          title={education.header}
-          items={education.listItems}
-          listType="education"
-        />
+        <CustomList title={education.header} items={education.listItems} listType="education" />
       </div>
     </div>
   </section>
@@ -101,22 +87,35 @@ import profilePic from "../assets/images/profile-pic.webp";
       <h2 class="section-title fs-step-3">Skills</h2>
       <div class="divider-sm"></div>
 
-      <div
-        class="skills__list grid-auto justify-center"
-        style="--flow-space: 3rem"
-      >
+      <div class="skills__list grid-auto justify-center" style="--flow-space: 3rem">
         {
           skills.map((skill) => {
-            return (
-              <CustomList
-                title={skill.header}
-                items={skill.listItems}
-                listType="skills"
-              />
-            );
+            return <CustomList title={skill.header} items={skill.listItems} listType="skills" />;
           })
         }
       </div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects">
+    <div class="wrapper flow">
+      <h2 class="section-title fs-step-3">My Work</h2>
+      <div class="divider-sm"></div>
+
+      {
+        projects.map((project) => {
+          return (
+            <Project
+              screenshots={project.screenshots}
+              title={project.title}
+              tags={project.tags}
+              description={project.description}
+              demoLink={project.demoLink}
+              codeLink={project.codeLink}
+            />
+          );
+        })
+      }
     </div>
   </section>
 </MainLayout>

@@ -25,9 +25,15 @@
 
   /* Colors - Neutral */
   --clr-neutral-100: hsl(60, 9%, 98%);
+  --clr-neutral-600: hsl(217, 19%, 27%);
 
   /* Colors - Neutral */
-  --clr-gradient: hsl(214, 65%, 54%), hsl(214, 52%, 25%), hsl(223, 68%, 6%);
+  --clr-gradient: radial-gradient(
+    farthest-side circle at bottom in hsl,
+    hsl(214 65 65) 0%,
+    hsl(214 52 25) 50%,
+    hsl(223 68 6) 100%
+  );
 
   /* Font Families */
   --ff-base: "Figtree", system-ui, sans-serif;
@@ -203,14 +209,15 @@ a {
   --item-placement: auto-fit;
   display: grid;
   gap: var(--gap, 1rem);
-  grid-template-columns: repeat(
-    var(--item-placement),
-    minmax(min(var(--min-col-size), 100%), 1fr)
-  );
+  grid-template-columns: repeat(var(--item-placement), minmax(min(var(--min-col-size), 100%), 1fr));
 }
 
 .gap-md {
   --gap: 1.5rem;
+}
+
+.gap-lg {
+  --gap: 3rem;
 }
 
 .align-center {
@@ -251,7 +258,7 @@ a {
 }
 
 .bg-gradient {
-  background-image: radial-gradient(var(--clr-gradient));
+  background-image: var(--clr-gradient);
 }
 
 .fs-step--1 {
@@ -299,7 +306,8 @@ a {
   max-width: 4rem; /* 70px */
 }
 
-.divider-sm {
+.divider-sm,
+.divider-lg {
   display: block;
   width: 70px;
   height: 3px;
@@ -307,11 +315,17 @@ a {
   border-radius: 100vw;
 }
 
+.divider-lg {
+  width: 150px;
+  margin-block: 3rem;
+}
+
 /* ******** BLOCK STYLE ******** */
 .hero {
   position: relative;
   overflow: hidden;
   isolation: isolate;
+  z-index: -1;
 }
 
 .hero__bg {
@@ -333,6 +347,7 @@ a {
 .profile-pic {
   justify-self: center;
   filter: drop-shadow(0 0 4px hsl(0 0% 0% / 0.5));
+  z-index: -1;
 
   @media (width > 48em) {
     order: 1;
