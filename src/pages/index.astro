@@ -3,7 +3,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 import CustomList from "../components/CustomList.astro";
 
 import { techStack } from "../data/techStack";
-import { certificates, education } from "../data/lists";
+import { certificates, education, skills } from "../data/lists";
 
 import { Image } from "astro:assets";
 import heroBG from "../assets/images/bg-starry-night.webp";
@@ -23,6 +23,7 @@ import profilePic from "../assets/images/profile-pic.webp";
         role="list"
         aria-label="My Tech Stack"
         class="flex-flow gap-md align-center justify-center flex-wrap"
+        style="--flow-space: 3rem"
       >
         {
           techStack.map((item) => {
@@ -50,6 +51,9 @@ import profilePic from "../assets/images/profile-pic.webp";
             transforming great designs into excellent user experiences through
             well-written, maintainable code.
           </p>
+
+          <div class="divider-sm"></div>
+
           <p>
             I spent the last couple of years learning web development through
             various online courses from reputable developers. I have experience
@@ -74,15 +78,44 @@ import profilePic from "../assets/images/profile-pic.webp";
       </div>
 
       <div
-        class="flex-flow flex-wrap justify-between"
-        style="--flow-space: 3rem"
+        class="education flex-flow flex-wrap justify-between"
+        style="--flow-space: 3rem;"
       >
         <CustomList
           title={certificates.header}
           items={certificates.listItems}
+          listType="certificate"
         />
 
-        <CustomList title={education.header} items={education.listItems} />
+        <CustomList
+          title={education.header}
+          items={education.listItems}
+          listType="education"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="bg-dark">
+    <div class="wrapper flow">
+      <h2 class="section-title fs-step-3">Skills</h2>
+      <div class="divider-sm"></div>
+
+      <div
+        class="skills__list grid-auto justify-center"
+        style="--flow-space: 3rem"
+      >
+        {
+          skills.map((skill) => {
+            return (
+              <CustomList
+                title={skill.header}
+                items={skill.listItems}
+                listType="skills"
+              />
+            );
+          })
+        }
       </div>
     </div>
   </section>

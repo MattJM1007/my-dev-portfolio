@@ -4,14 +4,14 @@ export default {
   singleQuote: false,
   tabWidth: 2,
   useTabs: false,
-  trailingComma: 'es5',
-  printWidth: 80,
-  plugins: ['prettier-plugin-astro'],
+  trailingComma: "es5",
+  printWidth: 100,
+  plugins: ["prettier-plugin-astro"],
   overrides: [
     {
-      files: '*.astro',
+      files: "*.astro",
       options: {
-        parser: 'astro',
+        parser: "astro",
       },
     },
   ],

@@ -33,7 +33,6 @@
   --ff-base: "Figtree", system-ui, sans-serif;
 
   /* Font Sizes */
-
   /* Step -1: 12.8px → 13.5034px */
   --fs-step--1: clamp(0.8rem, 0.7853rem + 0.0651vw, 0.844rem);
   /* Step 0: 16px → 18px */
@@ -199,6 +198,17 @@ a {
   grid-template-columns: var(--column-template);
 }
 
+.grid-auto {
+  --min-col-size: 200px;
+  --item-placement: auto-fit;
+  display: grid;
+  gap: var(--gap, 1rem);
+  grid-template-columns: repeat(
+    var(--item-placement),
+    minmax(min(var(--min-col-size), 100%), 1fr)
+  );
+}
+
 .gap-md {
   --gap: 1.5rem;
 }
@@ -289,9 +299,16 @@ a {
   max-width: 4rem; /* 70px */
 }
 
+.divider-sm {
+  display: block;
+  width: 70px;
+  height: 3px;
+  background: var(--clr-primary-300);
+  border-radius: 100vw;
+}
+
 /* ******** BLOCK STYLE ******** */
 .hero {
-  --flow-space: 1.5rem;
   position: relative;
   overflow: hidden;
   isolation: isolate;

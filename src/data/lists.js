@@ -1,14 +1,10 @@
-import certificate from "../assets/icons/ui/icon-certificate.svg";
-import circleCheckmark from "../assets/icons/ui/icon-circle-checkmark.svg";
 import codepen from "../assets/icons/ui/icon-codepen.svg";
-import college from "../assets/icons/ui/icon-education.svg";
 import email from "../assets/icons/ui/icon-email.svg";
 import github from "../assets/icons/ui/icon-github.svg";
 import linkedin from "../assets/icons/ui/icon-linkedin.svg";
 
 export const certificates = {
   header: "Certificates",
-  icon: certificate,
   listItems: [
     "Complete Full-Stack Web Development  Bootcamp - Angela Yu",
     "CSS Demystified - Kevin Powell",
@@ -18,27 +14,23 @@ export const certificates = {
 
 export const education = {
   header: "Education",
-  icon: college,
   listItems: [
     "MS Occupational Health and Safety Engineering - NJIT",
     "BS Chemical  Engineering - NJIT",
   ],
 };
 
-export const skills = {
-  development: {
+export const skills = [
+  {
     header: "Development",
-    icon: circleCheckmark,
     listItems: ["Semantic HTML", "CSS", "JavaScript", "React", "Astro"],
   },
-  design: {
+  {
     header: "Design",
-    icon: circleCheckmark,
     listItems: ["Figma", "Penpot", "Affinity", "Canva"],
   },
-  tools: {
+  {
     header: "Tools",
-    icon: circleCheckmark,
     listItems: [
       "Git / GitHub",
       "Command Line",
@@ -47,9 +39,8 @@ export const skills = {
       "Copilot",
     ],
   },
-  knowledge: {
+  {
     header: "Knowledge",
-    icon: circleCheckmark,
     listItems: [
       "CSS Architecture",
       "Accessibility",
@@ -58,7 +49,7 @@ export const skills = {
       "Components",
     ],
   },
-};
+];
 
 export const socialLinks = [
   {

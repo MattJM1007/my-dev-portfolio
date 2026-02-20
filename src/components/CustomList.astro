@@ -1,10 +1,10 @@
 ---
-const { icon, title, items } = Astro.props;
+const { listType, title, items } = Astro.props;
 ---
 
 <div>
-  <h3>{title}</h3>
-  <ul role="list">
+  <h3 class="fs-step-1">{title}</h3>
+  <ul role="list" class="custom-list" data-list-type={listType}>
     {
       items.map((item) => {
         return <li>{item}</li>;
@@ -12,3 +12,36 @@ const { icon, title, items } = Astro.props;
     }
   </ul>
 </div>
+
+<style>
+  div:has([data-list-type="skills"]) {
+    padding-inline-start: 2rem;
+  }
+
+  ul li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem;
+    align-items: center;
+    margin-block-start: 0.5rem;
+  }
+
+  ul li::before {
+    content: var(--icon);
+    line-height: 1;
+  }
+
+  [data-list-type="certificate"] {
+    --icon: url("../assets/icons/ui/icon-certificate.svg");
+  }
+
+  [data-list-type="education"] {
+    --icon: url("../assets/icons/ui/icon-education.svg");
+  }
+
+  [data-list-type="skills"] {
+    --icon: url("../assets/icons/ui/icon-circle-checkmark.svg");
+    padding-inline-start: 1rem;
+    align-self: center;
+  }
+</style>
