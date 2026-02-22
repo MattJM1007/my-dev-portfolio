@@ -1,6 +1,11 @@
 ---
 import "../styles/main.css";
 import MainHeader from "../components/MainHeader.astro";
+import emailIcon from "../assets/icons/ui/icon-email.svg";
+import linkedinIcon from "../assets/icons/ui/icon-linkedin.svg";
+import githubIcon from "../assets/icons/ui/icon-github.svg";
+import codepenIcon from "../assets/icons/ui/icon-codepen.svg";
+import Image from "astro/components/Image.astro";
 ---
 
 <!doctype html>
@@ -21,8 +26,32 @@ import MainHeader from "../components/MainHeader.astro";
       <slot />
     </main>
 
-    <footer>
-      <p class="wrapper">© Matthew Miguel {new Date().getFullYear()}</p>
+    <footer class="text-center bg-gradient text-clr-light">
+      <div class="wrapper">
+        <ul class="social-links flex-flow justify-center" role="list" aria-label="Social Links">
+          <li>
+            <a href="mailto:matthewmiguel.dev@gmail.com">
+              <Image src={emailIcon} alt="Email Me" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/matthewmiguel/">
+              <Image src={linkedinIcon} alt="LinkedIn" />
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/MattJM1007">
+              <Image src={githubIcon} alt="GitHub" />
+            </a>
+          </li>
+          <li>
+            <a href="https://codepen.io/MattJM1007/pens/showcase">
+              <Image src={codepenIcon} alt="Codepen" />
+            </a>
+          </li>
+        </ul>
+        <p class="wrapper">© Matthew Miguel {new Date().getFullYear()}</p>
+      </div>
     </footer>
   </body>
 </html>

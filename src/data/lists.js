@@ -1,8 +1,3 @@
-import codepen from "../assets/icons/ui/icon-codepen.svg";
-import email from "../assets/icons/ui/icon-email.svg";
-import github from "../assets/icons/ui/icon-github.svg";
-import linkedin from "../assets/icons/ui/icon-linkedin.svg";
-
 export const certificates = {
   header: "Certificates",
   listItems: [
@@ -31,13 +26,7 @@ export const skills = [
   },
   {
     header: "Tools",
-    listItems: [
-      "Git / GitHub",
-      "Command Line",
-      "Chrome Dev Tools",
-      "Claude AI",
-      "Copilot",
-    ],
+    listItems: ["Git / GitHub", "Command Line", "Chrome Dev Tools", "Claude AI", "Copilot"],
   },
   {
     header: "Knowledge",
@@ -48,28 +37,5 @@ export const skills = [
       "API Data Handling",
       "Components",
     ],
-  },
-];
-
-export const socialLinks = [
-  {
-    name: "Email",
-    icon: email,
-    link: "matthewmiguel.dev@gmail.com",
-  },
-  {
-    name: "LinkedIn",
-    icon: linkedin,
-    link: "https://www.linkedin.com/in/matthewmiguel/",
-  },
-  {
-    name: "GitHub",
-    icon: github,
-    link: "https://github.com/MattJM1007",
-  },
-  {
-    name: "Code Pen",
-    icon: codepen,
-    link: "https://codepen.io/MattJM1007/pens/showcase",
   },
 ];

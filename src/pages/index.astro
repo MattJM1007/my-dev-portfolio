@@ -2,6 +2,7 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import CustomList from "../components/CustomList.astro";
 import Project from "../components/Project.astro";
+import ContactForm from "../components/ContactForm.astro";
 
 import { techStack } from "../data/techStack";
 import { certificates, education, skills } from "../data/lists";
@@ -116,6 +117,16 @@ import profilePic from "../assets/images/profile-pic.webp";
           );
         })
       }
+    </div>
+  </section>
+
+  <section id="contact" class="contact bg-dark text-center">
+    <div class="wrapper flow">
+      <h2 class="section-title fs-step-3">Get In Touch</h2>
+      <div class="divider-sm"></div>
+      <p class="fs-step-1">Interested in working together? I'd love to hear from you.</p>
+
+      <ContactForm />
     </div>
   </section>
 </MainLayout>

@@ -42,32 +42,43 @@ import Image from "astro/components/Image.astro";
   .screenshots {
     display: flex;
     align-items: flex-end;
-    filter: drop-shadow(0 0 4px hsl(0 0% 0% / 0.5));
-    z-index: -1;
   }
 
   .screenshots > * {
     object-fit: cover;
     object-position: top;
     flex-shrink: 1;
+    box-shadow: 0 3px 4px hsl(0 0% 0% / 0.5);
     z-index: -1;
   }
 
   .screenshots :nth-child(1) {
     max-height: 550px;
     max-width: 70%;
+
+    @media (width < 48em) {
+      max-width: 100%;
+    }
   }
 
   .screenshots :nth-child(2) {
     max-height: 500px;
     transform: translateX(-20px);
     max-width: 30%;
+
+    @media (width < 48em) {
+      display: none;
+    }
   }
 
   .screenshots :nth-child(3) {
     max-height: 450px;
     transform: translateX(-40px);
     max-width: 20%;
+
+    @media (width < 48em) {
+      display: none;
+    }
   }
 
   .title-container {

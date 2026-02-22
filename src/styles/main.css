@@ -165,7 +165,8 @@ body {
   color: var(--clr-primary-900);
 }
 
-section {
+section,
+footer {
   padding-block: clamp(4rem, 3.125rem + 2.134vw, 7.5rem);
 }
 
@@ -353,6 +354,16 @@ a {
     order: 1;
     justify-self: end;
   }
+}
+
+.contact .divider-sm {
+  margin-inline: auto;
+}
+
+.contact p {
+  max-width: 24ch;
+  margin-inline: auto;
+  margin-block: 2rem;
 }
 
 /* ******** EXCEPTIONS ******** */
