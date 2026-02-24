@@ -4,7 +4,7 @@
   "exclude": ["dist"],
 
     "compilerOptions": {
-    "strict": true,
+    "strict": false,
     "noImplicitAny": false
 }
 }

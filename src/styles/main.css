@@ -22,6 +22,8 @@
 
   /* Colors - Accent */
   --clr-accent-1: hsl(25, 95%, 53%);
+  --clr-error: hsl(4, 95%, 72%);
+  --clr-success: hsl(142, 70%, 60%);
 
   /* Colors - Neutral */
   --clr-neutral-100: hsl(60, 9%, 98%);
@@ -250,7 +252,7 @@ a {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .bg-dark {
@@ -364,6 +366,15 @@ a {
   max-width: 24ch;
   margin-inline: auto;
   margin-block: 2rem;
+}
+
+.footer-primary path {
+  fill: var(--clr-neutral-100);
+  transition: fill 200ms ease-in;
+}
+
+.footer-primary a:is(:hover, :focus-visible) path {
+  fill: var(--clr-accent-1);
 }
 
 /* ******** EXCEPTIONS ******** */
