@@ -301,7 +301,7 @@ a {
 }
 
 .padding-block-2xl {
-  padding-block: clamp(5rem, -13.099rem + 48.263vw, 20rem);
+  padding-block: clamp(10rem, -13.099rem + 48.263vw, 20rem);
 }
 
 /* ******** COMPONENTS ******** */
