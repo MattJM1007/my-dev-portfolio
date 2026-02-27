@@ -4,16 +4,19 @@ import logo from "../assets/mjm-logo.svg";
 ---
 
 <header>
+  <a href="#mainContent" class="skip-link">Skip to content</a>
   <div class="wrapper">
-    <Image src={logo} alt="Homepage link" />
-    <button class="mobile-menu" aria-controls="primary-nav" aria-expanded="false">
+    <a href="#mainContent">
+      <Image src={logo} alt="Homepage link" />
+    </a>
+    <button class="mobile-menu" aria-controls="mainNav" aria-expanded="false">
       <svg fill="var(--clr-accent-1)" class="hamburger" viewBox="0 0 100 100" width="50">
         <rect class="line top" width="80" height="8" x="10" y="25" rx="5"></rect>
         <rect class="line middle" width="80" height="8" x="10" y="45" rx="5"></rect>
         <rect class="line bottom" width="80" height="8" x="10" y="65" rx="5"></rect>
       </svg>
     </button>
-    <nav class="primary-nav">
+    <nav id="mainNav" class="primary-nav">
       <ul role="list" class="primary-nav__inner">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
@@ -110,19 +113,19 @@ import logo from "../assets/mjm-logo.svg";
     margin: 0;
   }
 
-  a {
+  .primary-nav a {
     padding: 1rem;
     display: block;
     width: 100%;
   }
 
-  a:has(svg) {
+  .primary-nav a:has(svg) {
     display: flex;
     gap: 1rem;
     align-items: center;
   }
 
-  a:is(:hover, :focus-visible) {
+  .primary-nav a:is(:hover, :focus-visible) {
     background: var(--clr-accent-1);
     color: var(--clr-primary-900);
     transition:
@@ -197,6 +200,21 @@ import logo from "../assets/mjm-logo.svg";
     li {
       width: 100%;
     }
+  }
+
+  .skip-link {
+    background: var(--clr-accent-1);
+    color: var(--clr-primary-900);
+    padding: 0.5em;
+    border-radius: 0 0 0.25em 0.25em;
+    position: absolute;
+    left: 1rem;
+    transform: translateY(-100%);
+    transition: transform 300ms ease-in;
+  }
+
+  .skip-link:focus {
+    transform: translateY(0%);
   }
 </style>
 

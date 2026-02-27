@@ -34,11 +34,6 @@ import Image from "astro/components/Image.astro";
 </div>
 
 <style>
-  .project {
-    --flow-space: 1.5rem;
-    margin-block-start: 3rem;
-  }
-
   .screenshots {
     display: flex;
     align-items: flex-end;
@@ -79,31 +74,6 @@ import Image from "astro/components/Image.astro";
     @media (width < 48em) {
       display: none;
     }
-  }
-
-  .title-container {
-    margin-block-start: 3rem;
-    gap: 1.5rem;
-
-    @media (width > 55em) {
-      gap: 3rem;
-    }
-  }
-
-  .tags {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-
-  .tag {
-    color: var(--clr-neutral-100);
-    background: var(--clr-neutral-600);
-    font-weight: var(--fw-bold);
-    border-radius: 0.25rem;
-    padding-inline: 1em;
-    padding-block: 0.25em;
   }
 
   .button {

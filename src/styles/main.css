@@ -323,6 +323,22 @@ a {
   margin-block: 3rem;
 }
 
+.tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.tag {
+  color: var(--clr-neutral-100);
+  background: var(--clr-neutral-600);
+  font-weight: var(--fw-bold);
+  border-radius: 0.25rem;
+  padding-inline: 1em;
+  padding-block: 0.25em;
+}
+
 /* ******** BLOCK STYLE ******** */
 .hero {
   position: relative;
@@ -368,13 +384,56 @@ a {
   margin-block: 2rem;
 }
 
-.footer-primary path {
-  fill: var(--clr-neutral-100);
-  transition: fill 200ms ease-in;
+.project,
+.community-projects {
+  --flow-space: 1.5rem;
+  margin-block-start: 3rem;
 }
 
-.footer-primary a:is(:hover, :focus-visible) path {
-  fill: var(--clr-accent-1);
+.title-container {
+  margin-block-start: 3rem;
+  gap: 1.5rem;
+
+  @media (width > 55em) {
+    gap: 3rem;
+  }
 }
 
 /* ******** EXCEPTIONS ******** */
+.community-projects .project {
+  flex: 1;
+  max-width: fit-content;
+  display: grid;
+  grid-template-areas: "stack";
+  align-items: end;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 3px 4px hsl(0 0% 0% / 0.5);
+  cursor: pointer;
+
+  > * {
+    grid-area: stack;
+  }
+
+  .title {
+    color: var(--clr-neutral-100);
+    background: var(--clr-primary-400);
+    padding: 1.5rem;
+    transform: translateY(100%);
+    transition: transform 300ms ease-in;
+
+    @media (width < 48em) {
+      transform: unset;
+    }
+  }
+
+  &:is(:hover, :focus-visible) .title {
+    transform: translateY(0%);
+  }
+}
+
+.community-projects:has(.project:hover, .project:focus-visible)
+  .project:not(:hover, :focus-within) {
+  filter: grayscale(1);
+  z-index: -1;
+}

@@ -13,9 +13,11 @@
       id="name"
       required
       placeholder="Name"
+      autocomplete="name"
+      aria-describedby="nameError"
       data-error="Please enter your name"
     />
-    <span class="error" aria-live="polite"></span>
+    <span id="nameError" class="error" aria-live="polite"></span>
   </div>
 
   <div class="form-group">
@@ -26,9 +28,11 @@
       id="email"
       required
       placeholder="Email"
+      autocomplete="email"
+      aria-describedby="emailError"
       data-error="Please enter a valid email"
     />
-    <span class="error" aria-live="polite"></span>
+    <span id="emailError" class="error" aria-live="polite"></span>
   </div>
 
   <div class="form-group">
@@ -38,12 +42,13 @@
       id="message"
       required
       placeholder="Message..."
+      aria-describedby="messageError"
       data-error="Please enter your message"></textarea>
-    <span class="error" aria-live="polite"></span>
+    <span id="messageError" class="error" aria-live="polite"></span>
   </div>
 
   <button type="submit">Send Message</button>
-  <span class="result success" role="status"></span>
+  <span class="result" role="status"></span>
 </form>
 
 <style>
