@@ -37,19 +37,22 @@ import Image from "astro/components/Image.astro";
   .screenshots {
     display: flex;
     align-items: flex-end;
+    width: 100%;
+    /* overflow: hidden; */
   }
 
-  .screenshots > * {
+  .screenshots img {
     object-fit: cover;
     object-position: top;
-    flex-shrink: 1;
     box-shadow: 0 3px 4px hsl(0 0% 0% / 0.5);
     z-index: -1;
+    min-width: 0;
   }
 
   .screenshots :nth-child(1) {
     max-height: 550px;
-    max-width: 70%;
+    /* width: 70%; */
+    aspect-ratio: 746 / 500;
 
     @media (width < 48em) {
       max-width: 100%;
@@ -57,9 +60,11 @@ import Image from "astro/components/Image.astro";
   }
 
   .screenshots :nth-child(2) {
-    max-height: 500px;
+    max-height: 400px;
+    /* width: 30%; */
+
     transform: translateX(-20px);
-    max-width: 30%;
+    /* margin-inline-start: -20px; */
 
     @media (width < 48em) {
       display: none;
@@ -67,9 +72,11 @@ import Image from "astro/components/Image.astro";
   }
 
   .screenshots :nth-child(3) {
-    max-height: 450px;
+    max-height: 380px;
+    /* width: 20%; */
+
     transform: translateX(-40px);
-    max-width: 20%;
+    /* margin-inline-start: -20px; */
 
     @media (width < 48em) {
       display: none;

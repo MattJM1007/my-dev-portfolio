@@ -86,16 +86,16 @@ export const projects = [
   },
 ];
 
-export const community = {
-  lyndhurst: {
-    tile: "Lyndhurst Meditation",
+export const community = [
+  {
+    title: "Lyndhurst Meditation",
     screenshot: screenshotLyndhurst,
     link: "https://lyndhurstmeditation.org",
   },
 
-  jacksonHeights: {
-    tile: "Jackson Heights Meditation",
+  {
+    title: "Jackson Heights Meditation",
     screenshot: screenshotJacksonHeights,
     link: "https://jhmeditation.org",
   },
-};
+];
