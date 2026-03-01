@@ -7,7 +7,7 @@ import Image from "astro/components/Image.astro";
   <div class="screenshots">
     {
       screenshots.map((screenshot) => {
-        return <Image src={screenshot} alt="" />;
+        return <Image class={screenshot.size} src={screenshot.src} alt="" />;
       })
     }
   </div>
@@ -37,46 +37,19 @@ import Image from "astro/components/Image.astro";
   .screenshots {
     display: flex;
     align-items: flex-end;
-    width: 100%;
-    /* overflow: hidden; */
   }
 
   .screenshots img {
+    min-width: 0;
     object-fit: cover;
     object-position: top;
     box-shadow: 0 3px 4px hsl(0 0% 0% / 0.5);
     z-index: -1;
-    min-width: 0;
   }
 
-  .screenshots :nth-child(1) {
-    max-height: 550px;
-    /* width: 70%; */
-    aspect-ratio: 746 / 500;
-
-    @media (width < 48em) {
-      max-width: 100%;
-    }
-  }
-
-  .screenshots :nth-child(2) {
-    max-height: 400px;
-    /* width: 30%; */
-
-    transform: translateX(-20px);
-    /* margin-inline-start: -20px; */
-
-    @media (width < 48em) {
-      display: none;
-    }
-  }
-
-  .screenshots :nth-child(3) {
-    max-height: 380px;
-    /* width: 20%; */
-
-    transform: translateX(-40px);
-    /* margin-inline-start: -20px; */
+  .screenshots .tablet,
+  .screenshots .mobile {
+    margin-inline-start: -20px;
 
     @media (width < 48em) {
       display: none;

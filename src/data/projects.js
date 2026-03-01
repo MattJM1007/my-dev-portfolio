@@ -3,6 +3,7 @@ import contactMobile from "../assets/images/projects/contact-mobile.webp";
 import contactTablet from "../assets/images/projects/contact-tablet.webp";
 import faqDesktop from "../assets/images/projects/faq-desktop.webp";
 import faqTablet from "../assets/images/projects/faq-tablet.webp";
+import faqMobile from "../assets/images/projects/faq-mobile.webp";
 import passwordDesktop from "../assets/images/projects/password-desktop.webp";
 import passwordMobile from "../assets/images/projects/password-mobile.webp";
 import passwordTablet from "../assets/images/projects/password-tablet.webp";
@@ -21,7 +22,11 @@ import weatherTablet from "../assets/images/projects/weather-tablet.webp";
 export const projects = [
   {
     featured: true,
-    screenshots: [weatherDesktop, weatherTablet, weatherMobile],
+    screenshots: [
+      { size: "desktop", src: weatherDesktop },
+      { size: "tablet", src: weatherTablet },
+      { size: "mobile", src: weatherMobile },
+    ],
     title: "Weather Now",
     tags: ["React", "React Hooks", "API Integration", "CSS Grid", "Keyboard Accessibility"],
     description:
@@ -32,7 +37,11 @@ export const projects = [
 
   {
     featured: true,
-    screenshots: [scootDesktop, scootTablet, scootMobile],
+    screenshots: [
+      { size: "desktop", src: scootDesktop },
+      { size: "tablet", src: scootTablet },
+      { size: "mobile", src: scootMobile },
+    ],
     title: "Scoot Multi-Page Site",
     tags: ["Semantic HTML", "Mobile Navigation", "Accessibility", "CSS Grid", "Flexbox"],
     description:
@@ -43,7 +52,11 @@ export const projects = [
 
   {
     featured: true,
-    screenshots: [contactDesktop, contactTablet, contactMobile],
+    screenshots: [
+      { size: "desktop", src: contactDesktop },
+      { size: "tablet", src: contactTablet },
+      { size: "mobile", src: contactMobile },
+    ],
     title: "React Contact Form",
     tags: ["React", "Constraint Validation API", "Error Handling", "Accessibility"],
     description:
@@ -54,7 +67,11 @@ export const projects = [
 
   {
     featured: true,
-    screenshots: [passwordDesktop, passwordTablet, passwordMobile],
+    screenshots: [
+      { size: "desktop", src: passwordDesktop },
+      { size: "tablet", src: passwordTablet },
+      { size: "mobile", src: passwordMobile },
+    ],
     title: "Password Generator",
     tags: ["Advanced CSS Selectors", "Semantic HTML", "Form Handling", "JavaScript"],
     description:
@@ -65,7 +82,11 @@ export const projects = [
 
   {
     featured: true,
-    screenshots: [quizDesktop, quizTablet, quizMobile],
+    screenshots: [
+      { size: "desktop", src: quizDesktop },
+      { size: "tablet", src: quizTablet },
+      { size: "mobile", src: quizMobile },
+    ],
     title: "Front End Quiz App",
     tags: ["Theme Switcher", "JavaScript", "Data-Driven UI", "Aysnc/Await"],
     description:
@@ -76,7 +97,11 @@ export const projects = [
 
   {
     featured: true,
-    screenshots: [faqDesktop, faqTablet],
+    screenshots: [
+      { size: "desktop", src: faqDesktop },
+      { size: "tablet", src: faqTablet },
+      { size: "mobile", src: faqMobile },
+    ],
     title: "FAQ Accordian - CSS Only",
     tags: ["Semantic HTML", "CSS Only", "CSS Animations", "Interpolate-size"],
     description:
