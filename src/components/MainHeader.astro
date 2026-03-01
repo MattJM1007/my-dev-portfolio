@@ -18,10 +18,10 @@ import logo from "../assets/mjm-logo.svg";
     </button>
     <nav id="mainNav" class="primary-nav">
       <ul role="list" class="primary-nav__inner">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a class="about" href="#about">About</a></li>
+        <li><a class="skills" href="#skills">Skills</a></li>
+        <li><a class="projects" href="#projects">Projects</a></li>
+        <li><a class="contact" href="#contact">Contact</a></li>
         <li>
           <a href="/src/assets/mjm-logo.svg" download>
             Resume
@@ -67,6 +67,7 @@ import logo from "../assets/mjm-logo.svg";
 <style>
   header {
     background: var(--clr-primary-900);
+    box-shadow: 0 3px 4px hsl(0 0% 10% / 0.5);
     position: fixed;
     z-index: 999px;
     width: 100%;
@@ -87,9 +88,37 @@ import logo from "../assets/mjm-logo.svg";
     --menu-align-items: end;
     --menu-item-gap: 1.75rem;
     flex: 1;
+  }
 
-    @media (width <= 48em) {
-      display: none;
+  @media (width < 48em) {
+    .primary-nav {
+      --menu-direction: column;
+      --menu-margin-left: 0;
+      --menu-align-items: start;
+      --menu-item-gap: 0rem;
+      --animtation-timing: 500ms;
+
+      position: absolute;
+      top: 100%;
+      right: 2rem;
+      background: var(--clr-primary-900);
+      box-shadow: 0 0px 5px var(--clr-neutral-600);
+
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
+      transition:
+        height var(--animtation-timing),
+        visibility var(--animtation-timing);
+    }
+
+    .primary-nav.expanded {
+      height: auto;
+      visibility: visible;
+    }
+
+    .primary-nav li {
+      width: 100%;
     }
   }
 
@@ -181,27 +210,6 @@ import logo from "../assets/mjm-logo.svg";
     rotate: -45deg;
   }
 
-  @media (width < 48em) {
-    .expanded {
-      --menu-direction: column;
-      --menu-margin-left: 0;
-      --menu-align-items: start;
-      --menu-item-gap: 0rem;
-
-      display: block;
-      position: absolute;
-      flex-direction: column;
-      top: 100%;
-      right: 2rem;
-      background: var(--clr-primary-900);
-      box-shadow: 0 0px 5px var(--clr-neutral-600);
-    }
-
-    li {
-      width: 100%;
-    }
-  }
-
   .skip-link {
     background: var(--clr-accent-1);
     color: var(--clr-primary-900);
@@ -248,5 +256,22 @@ import logo from "../assets/mjm-logo.svg";
     if (!mobileMenuBtn.contains(targetEl) && targetEl !== mobileMenuBtn) {
       closeMenu();
     }
+  });
+
+  const sections = document.querySelectorAll("main > section");
+  const navLinks = document.querySelectorAll(".primary-nav__inner a[class]");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        console.log(entries);
+        const id = entries[0].target.id;
+        const currentLink = navLinks.filter((link) => link.class === id);
+        currentLink.style.background = "firebrick";
+      }
+    });
+  });
+
+  sections.forEach((section) => {
+    observer.observe(section);
   });
 </script>
