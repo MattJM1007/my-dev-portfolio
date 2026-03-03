@@ -154,7 +154,8 @@ import logo from "../assets/mjm-logo.svg";
     align-items: center;
   }
 
-  .primary-nav a:is(:hover, :focus-visible) {
+  .primary-nav a:is(:hover, :focus-visible),
+  .active {
     background: var(--clr-accent-1);
     color: var(--clr-primary-900);
     transition:
@@ -163,6 +164,24 @@ import logo from "../assets/mjm-logo.svg";
 
     & svg {
       fill: var(--clr-neutral-900);
+    }
+  }
+
+  a[download]:active svg {
+    animation: --bounce 300ms linear;
+  }
+
+  @keyframes --bounce {
+    0% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(5px);
+    }
+
+    100% {
+      transform: translateY(0);
     }
   }
 
@@ -260,16 +279,25 @@ import logo from "../assets/mjm-logo.svg";
 
   const sections = document.querySelectorAll("main > section");
   const navLinks = document.querySelectorAll(".primary-nav__inner a[class]");
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        console.log(entries);
-        const id = entries[0].target.id;
-        const currentLink = navLinks.filter((link) => link.class === id);
-        currentLink.style.background = "firebrick";
-      }
-    });
-  });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.target.id === "hero" && entry.isIntersecting) {
+          navLinks.forEach((link) => link.classList.remove("active"));
+          return;
+        }
+
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          navLinks.forEach((link) => link.classList.remove("active"));
+          const currentLink = Array.from(navLinks).find((link) => link.classList.contains(id));
+          currentLink?.classList.add("active");
+        }
+      });
+    },
+    { rootMargin: "-40% 0% -50% 0%", threshold: 0 }
+  );
 
   sections.forEach((section) => {
     observer.observe(section);

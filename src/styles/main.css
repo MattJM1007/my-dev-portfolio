@@ -301,7 +301,11 @@ a {
 }
 
 .padding-block-2xl {
-  padding-block: clamp(10rem, -13.099rem + 48.263vw, 20rem);
+  padding-block: clamp(10rem, -13.099rem + 48.263vw, 25rem);
+}
+
+.full-height {
+  height: 100vh;
 }
 
 /* ******** COMPONENTS ******** */
@@ -402,6 +406,7 @@ a {
 .community__projects {
   --flow-space: 3rem;
   --gap: 3rem;
+  z-index: -1;
 }
 
 .community__projects:has(.project-card:hover, .project-card:focus-visible)
