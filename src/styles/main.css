@@ -16,7 +16,7 @@
 
 :root {
   /* Colors - Primary */
-  --clr-primary-300: hsl(214, 65%, 54%);
+  --clr-primary-300: hsl(214, 65%, 48%);
   --clr-primary-400: hsl(214, 52%, 25%);
   --clr-primary-900: hsl(223, 68%, 6%);
 
@@ -389,7 +389,7 @@ a {
 }
 
 .project,
-.community-projects {
+.community {
   --flow-space: 1.5rem;
   margin-block-start: 3rem;
 }
@@ -406,13 +406,11 @@ a {
 .community__projects {
   --flow-space: 3rem;
   --gap: 3rem;
-  z-index: -1;
 }
 
 .community__projects:has(.project-card:hover, .project-card:focus-visible)
   .project-card:not(:hover, :focus-within) {
   filter: grayscale(1);
-  z-index: -1;
 }
 
 /* ******** EXCEPTIONS ******** */

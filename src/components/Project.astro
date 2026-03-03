@@ -37,14 +37,13 @@ import Image from "astro/components/Image.astro";
   .screenshots {
     display: flex;
     align-items: flex-end;
+    filter: drop-shadow(0 3px 4px hsl(0 0% 0% / 0.5));
   }
 
   .screenshots img {
     min-width: 0;
     object-fit: cover;
     object-position: top;
-    box-shadow: 0 3px 4px hsl(0 0% 0% / 0.5);
-    z-index: -1;
   }
 
   .screenshots .tablet,
@@ -72,5 +71,7 @@ import Image from "astro/components/Image.astro";
   .button:is(:hover, :focus-visible) {
     --fg: var(--clr-neutral-100);
     --bg: var(--clr-primary-400);
+    outline-color: var(--clr-accent-1);
+    outline-offset: 5px;
   }
 </style>

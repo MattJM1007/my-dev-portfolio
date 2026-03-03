@@ -74,6 +74,14 @@
     color: inherit;
   }
 
+  input:is(:focus-visible),
+  textarea:is(:focus-visible),
+  button:is(:focus-visible) {
+    outline-color: var(--clr-accent-1);
+    outline-offset: 8px;
+    outline-style: dashed;
+  }
+
   textarea {
     height: 5lh;
   }
