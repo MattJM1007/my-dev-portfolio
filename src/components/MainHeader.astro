@@ -6,8 +6,8 @@ import logo from "../assets/mjm-logo.svg";
 <header>
   <a href="#mainContent" class="skip-link">Skip to content</a>
   <div class="wrapper">
-    <a href="#mainContent">
-      <Image src={logo} alt="Homepage link" />
+    <a href="#mainContent" aria-label="Home">
+      <Image src={logo} alt="" />
     </a>
     <button class="mobile-menu" aria-controls="mainNav" aria-expanded="false">
       <svg fill="var(--clr-accent-1)" class="hamburger" viewBox="0 0 100 100" width="50">
@@ -163,7 +163,7 @@ import logo from "../assets/mjm-logo.svg";
       color 300ms ease;
 
     & svg {
-      fill: var(--clr-neutral-900);
+      fill: var(--clr-primary-900);
     }
   }
 

@@ -1,8 +1,8 @@
 ---
-
+// Access key is intentionally hardcoded — recommended implementation by web3forms
 ---
 
-<form action="POST" class="flow" novalidate>
+<form action="https://api.web3forms.com/submit" method="POST" class="flow" novalidate>
   <input type="hidden" name="access_key" value="cfca30b9-3e42-4823-8a26-fd730ee1695e" />
 
   <div class="form-group">
@@ -128,7 +128,6 @@
   const form = document.querySelector(".contact form");
   const inputs = form?.querySelectorAll("input, textarea");
   const resultEl = form?.querySelector(".result");
-  let isValid = true;
 
   function checkError(e) {
     const input = e.target;
@@ -138,7 +137,6 @@
 
     if (hasError) {
       errorEl.textContent = errorText;
-      isValid = false;
     }
   }
 
@@ -147,7 +145,6 @@
     const errorEl = input.parentElement.querySelector(".error");
     errorEl.textContent = "";
     resultEl.textContent = "";
-    isValid = true;
   }
 
   inputs?.forEach((input) => {
@@ -161,13 +158,15 @@
   async function handleSubmit(e) {
     e.preventDefault();
 
-    isValid = e.target.checkValidity();
+    const isValid = e.target.checkValidity();
 
     if (!isValid) {
-      console.log(isValid);
       inputs?.forEach((input) => {
         const errorEl = input.parentElement?.querySelector(".error");
-        if (errorEl) errorEl.textContent = input.dataset.error;
+        const hasError = !input.checkValidity();
+        if (hasError) {
+          errorEl.textContent = input.dataset.error;
+        }
       });
       return;
     }

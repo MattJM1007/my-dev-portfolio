@@ -29,7 +29,7 @@
   --clr-neutral-100: hsl(60, 9%, 98%);
   --clr-neutral-600: hsl(217, 19%, 27%);
 
-  /* Colors - Neutral */
+  /* Colors - Gradient */
   --clr-gradient: radial-gradient(
     farthest-side circle at bottom in hsl,
     hsl(214 65 65) 0%,
@@ -348,7 +348,6 @@ a {
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  z-index: -1;
 }
 
 .hero__bg {
@@ -409,7 +408,7 @@ a {
 }
 
 .community__projects:has(.project-card:hover, .project-card:focus-visible)
-  .project-card:not(:hover, :focus-within) {
+  .project-card:not(:hover, :focus-visible) {
   filter: grayscale(1);
 }
 

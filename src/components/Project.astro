@@ -1,26 +1,32 @@
 ---
-const { featured, screenshots, title, tags, description, demoLink, codeLink } = Astro.props;
-import Image from "astro/components/Image.astro";
+const { screenshots, title, tags, description, demoLink, codeLink } = Astro.props;
+import { Image } from "astro:assets";
 ---
 
-<div class="project flow">
+<article class="project flow">
   <div class="screenshots">
     {
       screenshots.map((screenshot) => {
-        return <Image class={screenshot.size} src={screenshot.src} alt="" />;
+        return (
+          <Image
+            class={screenshot.size}
+            src={screenshot.src}
+            alt={`${title} on ${screenshot.size}`}
+          />
+        );
       })
     }
   </div>
 
   <div class="title-container flex-flow align-center flex-wrap">
     <h3 class="fs-step-2">{title}</h3>
-    <div class="tags">
+    <ul role="list" class="tags">
       {
         tags.map((tag) => {
-          return <span class="tag fs-step--1">{tag}</span>;
+          return <li class="tag fs-step--1">{tag}</li>;
         })
       }
-    </div>
+    </ul>
   </div>
 
   <p>{description}</p>
@@ -31,7 +37,7 @@ import Image from "astro/components/Image.astro";
   </div>
 
   <div class="divider-lg"></div>
-</div>
+</article>
 
 <style>
   .screenshots {
@@ -65,7 +71,9 @@ import Image from "astro/components/Image.astro";
     padding-inline: 2em;
     padding-block: 0.5em;
     cursor: pointer;
-    transform: background 500ms ease-in;
+    transition:
+      background 200ms ease-in,
+      color 200ms ease-in;
   }
 
   .button:is(:hover, :focus-visible) {
