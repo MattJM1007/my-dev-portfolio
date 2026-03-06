@@ -1,46 +1,33 @@
-# Astro Starter Kit: Basics
+# My Portfolio Site
 
-```sh
-npm create astro@latest -- --template basics
+This is my frontend web developer portfolio featuring my skills and projects. Built using Astro.
+
+You can visit the live site at [matthewmiguel.com](https://matthewmiguel.com)
+
+## My Tech Stack
+
+- **Languages**: HTML, CSS, JavaScript
+- **Frameworks**: React, Astro
+- **Tools**: Git, GitHub, Chrome Dev Tools, Claude AI
+
+## Featured Projects
+
+| Project | Tech | Live |
+|---|---|---|
+| Weather Now App | React, CSS, Open-Meteo API, Geolocation API | [link](https://mattjm1007.github.io/weather-app/) |
+| Scoot Multi-Page Site | HTML, CSS, JavaScript | [link](https://mattjm1007.github.io/fem-scoot-challenge/) | 
+| React Contact Form | React, CSS, Constraint Validation API | [link](https://mattjm1007.github.io/react-contact-form-component/) | 
+| Password Generator | HTML, CSS, JavaScript | [link](https://mattjm1007.github.io/Password-Generator-App/) | 
+| Frontend Quiz App | HTML, CSS, JavaScript | [link](https://mattjm1007.github.io/Frontend-Quiz-App/) | 
+| FAQ Accordion | HTML, CSS | [link](https://mattjm1007.github.io/faq-accordian/) | 
+
+## Running Locally
+```bash
+git clone https://github.com/mattjm1007/my-dev-portfolio.git
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Preview
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+![Screenshot of my website](./portfolio-preview.png)

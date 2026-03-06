@@ -102,7 +102,7 @@ export const projects = [
       { size: "tablet", src: faqTablet },
       { size: "mobile", src: faqMobile },
     ],
-    title: "FAQ Accordian - CSS Only",
+    title: "FAQ Accordion - CSS Only",
     tags: ["Semantic HTML", "CSS Only", "CSS Animations", "Interpolate-size"],
     description:
       "A FAQ accordion built entirely with HTML and CSS. The accordion uses native details and summary elements for open and close functionality, with smooth animations powered by the CSS interpolate-size property — no JavaScript required.",
