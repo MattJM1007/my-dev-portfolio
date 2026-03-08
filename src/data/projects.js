@@ -87,7 +87,7 @@ export const projects = [
       { size: "tablet", src: quizTablet },
       { size: "mobile", src: quizMobile },
     ],
-    title: "Front End Quiz App",
+    title: "Frontend Quiz App",
     tags: ["Theme Switcher", "JavaScript", "Data-Driven UI", "Async/Await"],
     description:
       "A quiz app that tests your knowledge across multiple frontend development topics. Quiz data is fetched asynchronously from a JSON file and used to dynamically populate questions, answer choices, and scoring. The theme switcher uses the CSS light-dark() function with custom properties and respects the user's system preference as a default. Progress is tracked throughout with a visual progress bar and a final score screen.",
