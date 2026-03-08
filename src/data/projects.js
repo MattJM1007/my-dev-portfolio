@@ -46,8 +46,8 @@ export const projects = [
     tags: ["Semantic HTML", "Mobile Navigation", "Accessibility", "CSS Grid", "Flexbox"],
     description:
       "Scoot is a multi-page marketing website for a fictional scooter-sharing service. The site features four pages with complex responsive layouts using CSS Grid and Flexbox, reusable decorative patterns built with pseudo-elements and CSS counters, and a mobile navigation menu with proper ARIA state management. Semantic HTML and consistent component patterns are maintained across all pages.",
-    demoLink: "https://mattjm1007.github.io/fem-scoot-challenge/",
-    codeLink: "https://github.com/MattJM1007/fem-scoot-challenge",
+    demoLink: "https://mattjm1007.github.io/scoot-website/",
+    codeLink: "https://github.com/MattJM1007/scoot-website",
   },
 
   {
