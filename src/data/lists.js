@@ -26,16 +26,16 @@ export const skills = [
   },
   {
     header: "Tools",
-    listItems: ["Git / GitHub", "Command Line", "Chrome Dev Tools", "Claude AI", "Copilot"],
+    listItems: ["Git / GitHub", "Vite", "VS Code", "Command Line", "Chrome Dev Tools"],
   },
   {
     header: "Knowledge",
     listItems: [
-      "CSS Architecture",
-      "Accessibility",
       "Responsive Design",
+      "Accessibility",
+      "CSS Architecture",
       "API Data Handling",
-      "Components",
+      "Component Architecture",
     ],
   },
 ];
