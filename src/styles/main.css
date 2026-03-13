@@ -348,6 +348,7 @@ a {
   position: relative;
   overflow: hidden;
   isolation: isolate;
+  height: min(100vh, 70rem);
 }
 
 .hero__bg {

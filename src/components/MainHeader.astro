@@ -96,7 +96,7 @@ import logo from "../assets/mjm-logo.svg";
       --menu-margin-left: 0;
       --menu-align-items: start;
       --menu-item-gap: 0rem;
-      --animtation-timing: 500ms;
+      --animation-timing: 500ms;
 
       position: absolute;
       top: 100%;
@@ -104,17 +104,17 @@ import logo from "../assets/mjm-logo.svg";
       background: var(--clr-primary-900);
       box-shadow: 0 0px 5px var(--clr-neutral-600);
 
-      height: 0;
-      overflow: hidden;
+      display: grid;
+      grid-template-rows: 0fr;
       visibility: hidden;
       transition:
-        height var(--animtation-timing),
-        visibility var(--animtation-timing);
+        grid-template-rows var(--animation-timing) ease-in,
+        visibility var(--animation-timing);
     }
 
     .primary-nav.expanded {
-      height: auto;
       visibility: visible;
+      grid-template-rows: 1fr;
     }
 
     .primary-nav li {
@@ -127,6 +127,8 @@ import logo from "../assets/mjm-logo.svg";
     flex-direction: var(--menu-direction);
     gap: var(--menu-item-gap);
     align-items: var(--menu-align-items);
+    overflow: hidden;
+    min-height: 0;
 
     @media (width > 48em) {
       gap: 2.25rem;
@@ -200,25 +202,24 @@ import logo from "../assets/mjm-logo.svg";
 
   .mobile-menu .line {
     transition:
-      y 300ms ease-in 300ms,
+      translate 300ms ease-in 300ms,
       rotate 300ms ease-in,
       opacity 0ms 300ms;
+
     transform-origin: center;
+    transform-box: fill-box;
   }
 
   .mobile-menu[aria-expanded="true"] .line {
     transition:
-      y 300ms ease-in,
+      translate 300ms ease-in,
       rotate 300ms ease-in 300ms,
       opacity 0ms 300ms;
   }
 
-  .mobile-menu[aria-expanded="true"] :is(.top, .bottom) {
-    y: 45;
-  }
-
   .mobile-menu[aria-expanded="true"] .top {
     rotate: 45deg;
+    translate: 0px 20px;
   }
 
   .mobile-menu[aria-expanded="true"] .middle {
@@ -227,6 +228,7 @@ import logo from "../assets/mjm-logo.svg";
 
   .mobile-menu[aria-expanded="true"] .bottom {
     rotate: -45deg;
+    translate: 0px -20px;
   }
 
   .skip-link {
