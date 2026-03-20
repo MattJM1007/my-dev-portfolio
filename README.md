@@ -12,19 +12,19 @@ You can visit the live site at [matthewmiguel.com](https://matthewmiguel.com)
 
 ## Featured Projects
 
-| Project               | Tech                                        | Live                                                               |
-| --------------------- | ------------------------------------------- | ------------------------------------------------------------------ |
-| Weather Now App       | React, CSS, Open-Meteo API, Geolocation API | [link](https://mattjm1007.github.io/weather-app/)                  |
-| Scoot Multi-Page Site | HTML, CSS, JavaScript                       | [link](https://mattjm1007.github.io/fem-scoot-challenge/)          |
-| React Contact Form    | React, CSS, Constraint Validation API       | [link](https://mattjm1007.github.io/react-contact-form-component/) |
-| Password Generator    | HTML, CSS, JavaScript                       | [link](https://mattjm1007.github.io/Password-Generator-App/)       |
-| Frontend Quiz App     | HTML, CSS, JavaScript                       | [link](https://mattjm1007.github.io/Frontend-Quiz-App/)            |
-| FAQ Accordion         | HTML, CSS                                   | [link](https://mattjm1007.github.io/faq-accordian/)                |
+| Project               | Tech                                        | Live                                                                |
+| --------------------- | ------------------------------------------- | ------------------------------------------------------------------- |
+| Weather Now App       | React, CSS, Open-Meteo API, Geolocation API | [link](https://matt-miguel.github.io/weather-app/)                  |
+| Scoot Multi-Page Site | HTML, CSS, JavaScript                       | [link](https://matt-miguel.github.io/fem-scoot-challenge/)          |
+| React Contact Form    | React, CSS, Constraint Validation API       | [link](https://matt-miguel.github.io/react-contact-form-component/) |
+| Password Generator    | HTML, CSS, JavaScript                       | [link](https://matt-miguel.github.io/Password-Generator-App/)       |
+| Frontend Quiz App     | HTML, CSS, JavaScript                       | [link](https://matt-miguel.github.io/Frontend-Quiz-App/)            |
+| FAQ Accordion         | HTML, CSS                                   | [link](https://matt-miguel.github.io/faq-accordian/)                |
 
 ## Running Locally
 
 ```bash
-git clone https://github.com/mattjm1007/my-dev-portfolio.git
+git clone https://github.com/matt-miguel/my-dev-portfolio.git
 npm install
 npm run dev
 ```
