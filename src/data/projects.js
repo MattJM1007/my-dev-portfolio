@@ -31,8 +31,8 @@ export const projects = [
     tags: ["React", "React Hooks", "API Integration", "CSS Grid", "Keyboard Accessibility"],
     description:
       "Weather Now is a forecast app that lets users check current, hourly, and daily weather conditions for any location in the world. Built with React, it features geolocation on load, a searchable location dropdown with full keyboard accessibility, and unit toggling between imperial and metric. The responsive layout uses CSS Grid with named template areas to adapt across screen sizes. Data is sourced from the Open-Meteo API, Big Data Cloud API, and the native Geolocation API.",
-    demoLink: "https://mattjm1007.github.io/weather-app/",
-    codeLink: "https://github.com/MattJM1007/weather-app",
+    demoLink: "https://matt-miguel.github.io/weather-app/",
+    codeLink: "https://github.com/matt-miguel/weather-app",
   },
 
   {
@@ -46,8 +46,8 @@ export const projects = [
     tags: ["Semantic HTML", "Mobile Navigation", "Accessibility", "CSS Grid", "Flexbox"],
     description:
       "Scoot is a multi-page marketing website for a fictional scooter-sharing service. The site features four pages with complex responsive layouts using CSS Grid and Flexbox, reusable decorative patterns built with pseudo-elements and CSS counters, and a mobile navigation menu with proper ARIA state management. Semantic HTML and consistent component patterns are maintained across all pages.",
-    demoLink: "https://mattjm1007.github.io/scoot-website/",
-    codeLink: "https://github.com/MattJM1007/scoot-website",
+    demoLink: "https://matt-miguel.github.io/scoot-website/",
+    codeLink: "https://github.com/matt-miguel/scoot-website",
   },
 
   {
@@ -61,8 +61,8 @@ export const projects = [
     tags: ["React", "Constraint Validation API", "Error Handling", "Accessibility"],
     description:
       "A contact form component built with React featuring custom validation using the native Constraint Validation API. Errors display on blur and clear as the user types, providing immediate feedback without being intrusive. The form uses semantic HTML with proper ARIA attributes including aria-live regions for screen reader announcements and aria-describedby to connect inputs to their error messages. A toast notification confirms successful submission.",
-    demoLink: "https://mattjm1007.github.io/react-contact-form-component/",
-    codeLink: "https://github.com/MattJM1007/react-contact-form-component",
+    demoLink: "https://matt-miguel.github.io/react-contact-form-component/",
+    codeLink: "https://github.com/matt-miguel/react-contact-form-component",
   },
 
   {
@@ -76,8 +76,8 @@ export const projects = [
     tags: ["Advanced CSS Selectors", "Semantic HTML", "Form Handling", "JavaScript"],
     description:
       "A password generator that lets users customize length and character types to create secure passwords. The strength indicator uses minimal JavaScript to set a single class, with CSS :has() and sibling selectors handling all visual states from there. Form inputs are built with semantic HTML and custom-styled while maintaining full accessibility. Generated passwords can be copied to the clipboard with a single click.",
-    demoLink: "https://mattjm1007.github.io/Password-Generator-App/",
-    codeLink: "https://github.com/MattJM1007/Password-Generator-App",
+    demoLink: "https://matt-miguel.github.io/Password-Generator-App/",
+    codeLink: "https://github.com/matt-miguel/Password-Generator-App",
   },
 
   {
@@ -91,8 +91,8 @@ export const projects = [
     tags: ["Theme Switcher", "JavaScript", "Data-Driven UI", "Async/Await"],
     description:
       "A quiz app that tests your knowledge across multiple frontend development topics. Quiz data is fetched asynchronously from a JSON file and used to dynamically populate questions, answer choices, and scoring. The theme switcher uses the CSS light-dark() function with custom properties and respects the user's system preference as a default. Progress is tracked throughout with a visual progress bar and a final score screen.",
-    demoLink: "https://mattjm1007.github.io/Frontend-Quiz-App/",
-    codeLink: "https://github.com/MattJM1007/Frontend-Quiz-App",
+    demoLink: "https://matt-miguel.github.io/Frontend-Quiz-App/",
+    codeLink: "https://github.com/matt-miguel/Frontend-Quiz-App",
   },
 
   {
@@ -106,8 +106,8 @@ export const projects = [
     tags: ["Semantic HTML", "CSS Only", "CSS Animations", "Interpolate-size"],
     description:
       "A FAQ accordion built entirely with HTML and CSS. The accordion uses native details and summary elements for open and close functionality, with smooth animations powered by the CSS interpolate-size property — no JavaScript required.",
-    demoLink: "https://mattjm1007.github.io/faq-accordian/",
-    codeLink: "https://github.com/MattJM1007/faq-accordian",
+    demoLink: "https://matt-miguel.github.io/faq-accordian/",
+    codeLink: "https://github.com/matt-miguel/faq-accordian",
   },
 ];
 
