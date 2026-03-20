@@ -15,7 +15,7 @@ You can visit the live site at [matthewmiguel.com](https://matthewmiguel.com)
 | Project               | Tech                                        | Live                                                                |
 | --------------------- | ------------------------------------------- | ------------------------------------------------------------------- |
 | Weather Now App       | React, CSS, Open-Meteo API, Geolocation API | [link](https://matt-miguel.github.io/weather-app/)                  |
-| Scoot Multi-Page Site | HTML, CSS, JavaScript                       | [link](https://matt-miguel.github.io/fem-scoot-challenge/)          |
+| Scoot Multi-Page Site | HTML, CSS, JavaScript                       | [link](https://matt-miguel.github.io/scoot-website/)                |
 | React Contact Form    | React, CSS, Constraint Validation API       | [link](https://matt-miguel.github.io/react-contact-form-component/) |
 | Password Generator    | HTML, CSS, JavaScript                       | [link](https://matt-miguel.github.io/Password-Generator-App/)       |
 | Frontend Quiz App     | HTML, CSS, JavaScript                       | [link](https://matt-miguel.github.io/Frontend-Quiz-App/)            |
