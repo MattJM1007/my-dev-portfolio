@@ -1,4 +1,9 @@
-export const certificates = {
+type List = {
+  header: string;
+  listItems: string[];
+};
+
+export const certificates: List = {
   header: "Certificates",
   listItems: [
     "Complete Full-Stack Web Development  Bootcamp - Angela Yu",
@@ -7,7 +12,7 @@ export const certificates = {
   ],
 };
 
-export const education = {
+export const education: List = {
   header: "Education",
   listItems: [
     "MS Occupational Health and Safety Engineering - NJIT",
@@ -15,7 +20,7 @@ export const education = {
   ],
 };
 
-export const skills = [
+export const skills: List[] = [
   {
     header: "Development",
     listItems: ["Semantic HTML", "CSS", "JavaScript", "React", "Astro"],

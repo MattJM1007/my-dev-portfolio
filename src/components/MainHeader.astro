@@ -248,9 +248,8 @@ import logo from "../assets/mjm-logo.svg";
 </style>
 
 <script>
-  const mobileMenuBtn = document.querySelector(".mobile-menu");
-  const hamburger = document.querySelector(".hamburger");
-  const nav = document.querySelector(".primary-nav");
+  const mobileMenuBtn = document.querySelector<HTMLButtonElement>(".mobile-menu")!;
+  const nav = document.querySelector<HTMLElement>(".primary-nav")!;
 
   function openMenu() {
     nav.classList.add("expanded");
@@ -273,7 +272,7 @@ import logo from "../assets/mjm-logo.svg";
   });
 
   document.addEventListener("click", (e) => {
-    const targetEl = e.target;
+    const targetEl = e.target as HTMLElement;
     if (!mobileMenuBtn.contains(targetEl) && targetEl !== mobileMenuBtn) {
       closeMenu();
     }

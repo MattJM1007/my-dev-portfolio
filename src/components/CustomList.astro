@@ -1,4 +1,10 @@
 ---
+type Props = {
+  listType: string;
+  title: string;
+  items: string[];
+};
+
 const { listType, title, items } = Astro.props;
 ---
 
@@ -6,7 +12,7 @@ const { listType, title, items } = Astro.props;
   <h3 class="fs-step-1">{title}</h3>
   <ul role="list" class="custom-list" data-list-type={listType}>
     {
-      items.map((item) => {
+      items.map((item: string) => {
         return <li>{item}</li>;
       })
     }

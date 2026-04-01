@@ -19,7 +19,25 @@ import weatherDesktop from "../assets/images/projects/weather-desktop.webp";
 import weatherMobile from "../assets/images/projects/weather-mobile.webp";
 import weatherTablet from "../assets/images/projects/weather-tablet.webp";
 
-export const projects = [
+export type ScreenSizes = "desktop" | "tablet" | "mobile";
+
+type Project = {
+  featured: boolean;
+  screenshots: { size: ScreenSizes; src: ImageMetadata }[];
+  title: string;
+  tags: string[];
+  description: string;
+  demoLink: string;
+  codeLink: string;
+};
+
+type CommunityProject = {
+  title: string;
+  screenshot: ImageMetadata;
+  link: string;
+};
+
+export const projects: Project[] = [
   {
     featured: true,
     screenshots: [
@@ -111,7 +129,7 @@ export const projects = [
   },
 ];
 
-export const community = [
+export const community: CommunityProject[] = [
   {
     title: "Lyndhurst Meditation",
     screenshot: screenshotLyndhurst,

@@ -125,14 +125,15 @@
 </style>
 
 <script>
-  const form = document.querySelector(".contact form");
-  const inputs = form?.querySelectorAll("input, textarea");
-  const resultEl = form?.querySelector(".result");
+  const form = document.querySelector<HTMLFormElement>(".contact form")!;
+  const inputs = form.querySelectorAll<HTMLInputElement>("input, textarea")!;
+  const resultEl = form.querySelector<HTMLSpanElement>(".result")!;
 
-  function checkError(e) {
-    const input = e.target;
-    const errorEl = input.parentElement.querySelector(".error");
-    const errorText = input.dataset.error;
+  function checkError(e: FocusEvent) {
+    const input = e.target as HTMLInputElement;
+    if (!input.parentElement) return;
+    const errorEl = input.parentElement.querySelector(".error")!;
+    const errorText = input.dataset["error"] ?? "";
     const hasError = !input.checkValidity();
 
     if (hasError) {
@@ -140,38 +141,44 @@
     }
   }
 
-  function clearError(e) {
-    const input = e.target;
-    const errorEl = input.parentElement.querySelector(".error");
+  function clearError(e: Event) {
+    const input = e.target as HTMLInputElement;
+    if (!input.parentElement) return;
+
+    const errorEl = input.parentElement.querySelector(".error")!;
     errorEl.textContent = "";
     resultEl.textContent = "";
   }
 
-  inputs?.forEach((input) => {
+  inputs.forEach((input) => {
     input.addEventListener("blur", checkError);
   });
 
-  inputs?.forEach((input) => {
+  inputs.forEach((input) => {
     input.addEventListener("input", clearError);
   });
 
-  async function handleSubmit(e) {
+  async function handleSubmit(e: SubmitEvent) {
     e.preventDefault();
+    const form = e.target as HTMLFormElement;
 
-    const isValid = e.target.checkValidity();
+    const isValid = form.checkValidity();
 
     if (!isValid) {
       inputs?.forEach((input) => {
-        const errorEl = input.parentElement?.querySelector(".error");
+        if (!input.parentElement) return;
+        const errorEl = input.parentElement.querySelector(".error")!;
+        const errorText = input.dataset["error"] ?? "";
+
         const hasError = !input.checkValidity();
         if (hasError) {
-          errorEl.textContent = input.dataset.error;
+          errorEl.textContent = errorText;
         }
       });
       return;
     }
 
-    const formData = new FormData(e.target);
+    const formData = new FormData(form);
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
 
@@ -185,7 +192,7 @@
       resultEl?.classList.remove("error");
       resultEl?.classList.add("success");
       resultEl.textContent = "Your message has been sent!";
-      e.target.reset();
+      form.reset();
     } else {
       resultEl?.classList.remove("success");
       resultEl?.classList.add("error");
